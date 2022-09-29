@@ -11,93 +11,34 @@
 </svelte:head>
 
 <Hero />
-
-<!-- <section>
+<section class='glimpses'>
 	<div class="title">
-		<h1>Pronites</h1>
-		<div>
-			<a class="more-link" href="events">More Events</a>
-		</div>
+	<h1 style='font-weight: normal'>Meraz'22 Teaser</h1>
 	</div>
-
-	<div class="images">
-		<div class="pronite-image">
-			<span>DJ Night</span>
-		</div>
-		<div class="pronite-image">
-			<span>Aakash Gupta</span>
-		</div>
-		<div class="pronite-image">
-			<span>Band Performance</span>
-		</div>
-	</div>
-</section> -->
-<section class="glimpses">
-	<div class="title">
-		<h1 style="font-weight: normal">Meraz'22 Teaser</h1>
-	</div>
-	<!-- <iframe
-		src="https://www.youtube.com/embed/vrHzl-E-Pvs"
-		title="Meraz'19 Trailer"
-		frameborder="0"
-		allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-		allowfullscreen
-	/> -->
-	<lite-youtube
-		videoid="W0VIHUbZ680"
-		style="background-image: url('https://i.ytimg.com/vi/W0VIHUbZ680/hqdefault.jpg');"
-	>
-		<button type="button" class="lty-playbtn">
-			<span class="lyt-visually-hidden">Play: Meraz'22 Glimpses</span>
-		</button>
-	</lite-youtube>
-</section>
-<section class="glimpses">
-	<div class="title">
-		<h1 style="font-weight: normal">Meraz'19 Glimpses</h1>
-	</div>
-	<!-- <iframe
-		src="https://www.youtube.com/embed/vrHzl-E-Pvs"
-		title="Meraz'19 Trailer"
-		frameborder="0"
-		allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-		allowfullscreen
-	/> -->
-	<lite-youtube
-		videoid="fjtuMhY1KK8"
-		style="background-image: url('https://i.ytimg.com/vi/fjtuMhY1KK8/hqdefault.jpg');"
-	>
-		<button type="button" class="lty-playbtn">
-			<span class="lyt-visually-hidden">Play: Meraz'19 Glimpses</span>
-		</button>
-	</lite-youtube>
+	<iframe src="https://www.youtube.com/embed/W0VIHUbZ680" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </section>
 
-<section class="glimpses">
+
+
+<section class='glimpses'>
 	<div class="title">
-		<h1 style="font-weight: normal">Meraz'18 Glimpses</h1>
+	<h1 style='font-weight: normal'>Meraz'19 Glimpses</h1>
 	</div>
-	<!-- <iframe
-		src="https://www.youtube.com/embed/uOQbTb4-ejs"
-		title="Meraz'18 Glimpses"
-		frameborder="0"
-		allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-		allowfullscreen
-	/> -->
-	<lite-youtube
-		videoid="uOQbTb4-ejs"
-		style="background-image: url('https://i.ytimg.com/vi/uOQbTb4-ejs/hqdefault.jpg');"
-	>
-		<button type="button" class="lty-playbtn">
-			<span class="lyt-visually-hidden">Play: Meraz'18 Glimpses</span>
-		</button>
-	</lite-youtube>
+	<iframe src="https://www.youtube.com/embed/fjtuMhY1KK8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </section>
+
+<section class='glimpses'>
+	<div class="title">
+	<h1 style='font-weight: normal'>Meraz'18 Glimpses</h1>
+	</div>
+	<iframe  src="https://www.youtube.com/embed/uOQbTb4-ejs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</section>
+	
 
 <style lang="scss">
 	section {
 		height: 100vh;
-		padding-top: 75px;
+		// padding-top: 75px;
 		scroll-snap-align: start;
 		scroll-padding-top: 75px;
 		margin: auto;
@@ -193,29 +134,35 @@
 			url('../../../assets/event-images/alchemy.jpg');
 	}
 
-	lite-youtube {
-		margin: 1% auto;
-		width: 75vw;
-		height: 80vh;
+	
+iframe{
+	margin: 1% auto ;
+	width: 75vw;
+	height: 80vh;
+}
+.glimpses{
+	height: 100vh;
+}
+
+@media screen and (max-width: 900px) {
+	section > div.images {
+		flex-direction: column;
+		// padding-top: 15px;
+		div.pronite-image {
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
 	}
 
-	@media screen and (max-width: 1060px) {
-		section > div.images {
-			flex-direction: column;
-
-			div.pronite-image {
-				margin-top: 10px;
-				margin-bottom: 10px;
-			}
-		}
-		lite-youtube {
-			height: 30vh;
-			width: 90vw;
-			margin-top: 5vh;
-			margin-bottom: 0px;
-		}
-		.glimpses {
-			height: 70vh;
-		}
+	iframe{
+		height: 30vh;
+		width: 90vw;
+		margin-top: 5vh;
+		margin-bottom: 0px;
 	}
+	.glimpses{
+		height: 70vh ;
+		padding : 0px;
+	}
+}
 </style>

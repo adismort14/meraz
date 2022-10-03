@@ -21,9 +21,8 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: npm install and build
         run: |
-          npm i -g pnpm
-          pnpm install
-          pnpm build
+          npm install
+          npm run build
           cp ./build/index.html ./build/404.html
           echo meraz.in > ./build/CNAME
           echo > ./build/.nojekyll

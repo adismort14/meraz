@@ -1,7 +1,7 @@
 <script>
 	import { onMount } from 'svelte';
 
-	const END_TIME = new Date('Nov 8, 2019 00:00:00').getTime(); // End time of timer
+	const END_TIME = new Date('Nov 11, 2022 00:00:00').getTime(); // End time of timer
 	const TIMER_INTERVAL = 1000;
 
 	let timeLeft = { days: 0, hours: 0, minutes: 0, seconds: 0 },

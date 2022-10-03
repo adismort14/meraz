@@ -3,14 +3,13 @@
 	import { browser } from '$app/env';
 	import Fa from 'svelte-fa/src/fa.svelte';
 	import { faBars } from '@fortawesome/free-solid-svg-icons';
-
 	import { sidebarOpen } from '$lib/stores';
 	import links from '$lib/links.json';
 
 	let scrollY;
 	$: transparent = browser && scrollY <= 56 && $page.url.pathname === '/';
-	$: bgColor = transparent ? 'rgba(0,0,0,0)' : 'black';
-	$: shadow = transparent ? 'none' : 'var(--shadow)';
+	$: bgColor = transparent ? 'rgba(0,0,0,0)' : '#000a3f';
+	$: shadow = 'none';
 
 	$: display = $sidebarOpen ? 'none' : 'flex';
 </script>
@@ -25,7 +24,7 @@
 		<Fa icon={faBars} size="2x" />
 	</button>
 
-	<h1><a href="/">MERAZ</a></h1>
+	<h1><a href="/">Meraz</a></h1>
 	<ul class="links">
 		{#each links as { href, text }}
 			<li>
@@ -38,19 +37,25 @@
 </nav>
 
 <style lang="scss">
+	@font-face {
+		font-family: valorant;
+		src: url('assets/SLANT.TTF');
+	}
+  
 	button {
 		background: none;
 		border: none;
 		color: currentColor;
 	}
 	li {
-		background-image: url('/assets/gold-texture.jpg');
-		font-family: 'Metal Mania', cursive;
+		// background-image: url('/assets/gold-texture.jpg');
+		font-family: "valorant", cursive;
+		background-color: white;
 		font-size: 1.1em;
-		letter-spacing: 2px;
-		font-weight: bold;
+		letter-spacing: 1px;
+		font-weight: regular;
 
-		text-transform: uppercase;
+		// text-transform: uppercase;
 		text-align: center;
 		color: transparent;
 		-webkit-font-smoothing: antialiased;
@@ -70,10 +75,10 @@
 	h1 {
 		font-size: 2em;
 		margin: 10px;
-		font-family: 'Metal Mania', cursive;
+		font-family: 'valorant',cursive;
 		font-weight: normal;
-		letter-spacing: 5px;
-		background: -webkit-linear-gradient(gold, gold, red);
+		letter-spacing: 1px;
+		background: -webkit-linear-gradient(rgb(244, 242, 235), rgb(96, 162, 255), rgb(254, 177, 247));
 		background-clip: text;
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;

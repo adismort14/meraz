@@ -28,20 +28,27 @@
 	<ul class="links">
 		{#each links as { href, text }}
 			<li>
-				<a {href} class:active={href === '/' ? $page.url.pathname === href : $page.url.pathname.includes(href)}
-					>{text}</a
+				<a
+					{href}
+					class:active={href === '/'
+						? $page.url.pathname === href
+						: $page.url.pathname.includes(href)}>{text}</a
 				>
 			</li>
 		{/each}
 	</ul>
 </nav>
+<div class="nav-graphic">
+	<img src="assets/nav_img.png" alt="" />
+	<hr />
+</div>
 
 <style lang="scss">
 	@font-face {
 		font-family: valorant;
 		src: url('assets/SLANT.TTF');
 	}
-  
+
 	button {
 		background: none;
 		border: none;
@@ -49,7 +56,7 @@
 	}
 	li {
 		// background-image: url('/assets/gold-texture.jpg');
-		font-family: "valorant", cursive;
+		font-family: 'valorant', cursive;
 		background-color: white;
 		font-size: 1.1em;
 		letter-spacing: 1px;
@@ -65,17 +72,43 @@
 		-webkit-text-fill-color: transparent;
 	}
 
+	hr {
+		color: white;
+		background-color: white;
+		border: 4px solid white;
+		border-radius: 35px;
+		box-shadow: 1px 0px 10px 7px rgba(84, 222, 121, 0.99);
+		position: absolute;
+		right: 3.2%;
+		top: 59.7px;
+		width: 250px;
+		z-index: 1000;
+		float: right;
+	}
+
+	img {
+		width: 200px;
+		position: absolute;
+		right: 0px;
+		top: 3rem;
+		float: right;
+		z-index: 1500;
+	}
+
 	@media (max-width: 900px) {
 		h1 {
 			position: relative;
 			left: -10px;
 		}
 	}
+	// .nav-graphic {
+	// 	display: none;
+	// }
 
 	h1 {
 		font-size: 2em;
 		margin: 10px;
-		font-family: 'valorant',cursive;
+		font-family: 'valorant', cursive;
 		font-weight: normal;
 		letter-spacing: 1px;
 		background: -webkit-linear-gradient(rgb(244, 242, 235), rgb(96, 162, 255), rgb(254, 177, 247));

@@ -39,7 +39,7 @@
 	</ul>
 </nav>
 <div class="nav-graphic">
-	<img src="assets/nav_img.png" alt="" />
+	<img src="/assets/nav_img.png" alt="" />
 	<hr />
 </div>
 
